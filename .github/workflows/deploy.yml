@@ -34,7 +34,7 @@ jobs:
       - name: Build static site
         run: bun run build
         env:
-          NITRO_PRESET: github_pages
+          GITHUB_PAGES: "true"
 
       - name: Prepare GitHub Pages files
         run: |

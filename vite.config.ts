@@ -9,8 +9,8 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// The GitHub Pages workflow builds with GITHUB_PAGES=true. There, pages are written as
-// about.html (not about/index.html) so GitHub serves /about without a trailing-slash redirect.
+// The GitHub Pages workflow (.github/workflows/deploy.yml) builds with GITHUB_PAGES=true. Pages are
+// written as about.html (not about/index.html) so GitHub serves /about without a trailing-slash redirect.
 const githubPages = process.env.GITHUB_PAGES === "true";
 
 // Keep in sync with sitePages in src/lib/seo.ts.
@@ -30,8 +30,13 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // Pre-build every page as static HTML: needed for GitHub Pages and good for search engines.
-    prerender: { enabled: true, crawlLinks: false, autoSubfolderIndex: !githubPages },
-    pages: pages.map((path) => ({ path })),
+    // GitHub Pages only serves files, so that build pre-renders every page to static HTML.
+    // Lovable's own publish keeps normal server rendering.
+    ...(githubPages
+      ? {
+          prerender: { enabled: true, crawlLinks: false, autoSubfolderIndex: false },
+          pages: pages.map((path) => ({ path })),
+        }
+      : {}),
   },
 });
