@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Church, FlaskConical, GraduationCap, Home, Landmark } from "lucide-react";
 
-import aerial from "@/assets/campus_aerial.jpg.asset.json";
-import classrooms from "@/assets/campus_classrooms.jpg.asset.json";
 import logo from "@/assets/rapogi_logo_full.jpg.asset.json";
+import { photos } from "@/lib/photos";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { school } from "@/lib/school";
@@ -77,7 +76,7 @@ function About() {
         eyebrow="About us"
         title="Rooted in faith. Built for transformation."
         intro="For more than six decades, St. Joseph's Rapogi has shaped young men who go on to lead in Kenya and beyond."
-        image={aerial.url}
+        image={photos.avenue}
       />
 
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.2fr_1fr] md:py-24">
@@ -122,16 +121,19 @@ function About() {
       </section>
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
-        <div className="rounded-lg bg-card p-6 shadow-soft">
+        <figure>
           <img
-            src={logo.url}
-            alt="St. Joseph School Rapogi crest with the words Faith, Knowledge, Discipline, Service"
-            width={1080}
-            height={1080}
+            src={photos.principal}
+            alt="Chief Principal Mr. Erastus Nyagwa speaking at the St. Joseph's chaplaincy podium"
+            width={768}
+            height={1073}
             loading="lazy"
-            className="mx-auto w-full max-w-sm"
+            className="aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft"
           />
-        </div>
+          <figcaption className="mt-3 text-sm text-muted-foreground">
+            {school.principal}, Chief Principal
+          </figcaption>
+        </figure>
         <div>
           <SectionHeading eyebrow="Leadership" title={`Led by ${school.principal}`} />
           <p className="mt-6 text-muted-foreground md:text-lg">
@@ -170,14 +172,34 @@ function About() {
               ))}
             </ul>
           </div>
-          <img
-            src={classrooms.url}
-            alt="Classroom buildings among trees"
-            width={720}
-            height={720}
-            loading="lazy"
-            className="aspect-square w-full rounded-lg object-cover shadow-soft"
-          />
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={photos.aerial}
+              alt="Aerial view of the campus"
+              width={960}
+              height={540}
+              loading="lazy"
+              className="col-span-2 aspect-video w-full rounded-lg object-cover shadow-soft"
+            />
+            <img
+              src={photos.classrooms}
+              alt="Classroom buildings among trees"
+              width={720}
+              height={720}
+              loading="lazy"
+              className="aspect-square w-full rounded-lg object-cover shadow-soft"
+            />
+            <div className="flex aspect-square items-center justify-center rounded-lg bg-card p-4 shadow-soft">
+              <img
+                src={logo.url}
+                alt="St. Joseph School Rapogi crest"
+                width={1080}
+                height={1080}
+                loading="lazy"
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

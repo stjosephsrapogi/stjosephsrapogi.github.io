@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GraduationCap, HandHeart, HeartPulse, Users } from "lucide-react";
 
-import library from "@/assets/library-study.jpg";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import { photos } from "@/lib/photos";
 
 export const Route = createFileRoute("/alumni")({
   head: () => ({
@@ -39,7 +39,7 @@ function Alumni() {
         eyebrow="Alumni & community"
         title="Once a Rapogi boy, always a Rapogi boy"
         intro="Our old students remain a powerful, giving family that lifts every new generation."
-        image={library}
+        image={photos.aerial}
       />
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">

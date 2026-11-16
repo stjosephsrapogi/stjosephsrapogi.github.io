@@ -1,15 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users } from "lucide-react";
 
-import aerial from "@/assets/campus_aerial.jpg.asset.json";
-import classrooms from "@/assets/campus_classrooms.jpg.asset.json";
 import crest from "@/assets/rapogi_crest.png.asset.json";
-import football from "@/assets/football-match.jpg";
-import library from "@/assets/library-study.jpg";
-import lab from "@/assets/science-lab.jpg";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionHeading } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/")({
@@ -62,22 +58,22 @@ const highlights = [
   {
     icon: FlaskConical,
     title: "Academics & STEM",
-    text: "Specialised science labs, CBC pathways and a signature bi-cycle exam system.",
-    image: lab,
+    text: "Specialised science labs, CBC pathways, a signature bi-cycle exam system — and debate champions.",
+    image: photos.debate,
     to: "/academics" as const,
   },
   {
     icon: Dumbbell,
     title: "Sports & Clubs",
     text: "A football powerhouse in KSSSA, partnered with the Michael Olunga Football Academy.",
-    image: football,
+    image: photos.mofaGroup,
     to: "/student-life" as const,
   },
   {
     icon: Users,
     title: "Alumni Network",
     text: "ROSA and class associations mentor students and support those in need.",
-    image: library,
+    image: photos.celebrating,
     to: "/alumni" as const,
   },
 ];
@@ -88,7 +84,7 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate -mt-16 overflow-hidden md:-mt-20">
         <img
-          src={aerial.url}
+          src={photos.aerial}
           alt="Aerial view of the St. Joseph's Rapogi campus with blue-roofed buildings and green trees"
           className="absolute inset-0 -z-20 h-full w-full object-cover"
           width={1920}
@@ -147,16 +143,16 @@ function Index() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
         <div className="relative">
           <img
-            src={classrooms.url}
-            alt="Classroom blocks with blue roofs among tall trees"
-            width={720}
-            height={720}
+            src={photos.principal}
+            alt="Chief Principal Mr. Erastus Nyagwa addressing the school at the chaplaincy podium"
+            width={768}
+            height={1073}
             loading="lazy"
-            className="aspect-[4/5] w-full rounded-lg object-cover shadow-soft"
+            className="aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft"
           />
-          <div className="absolute -bottom-6 -right-2 rounded-lg bg-accent px-6 py-5 text-accent-foreground shadow-soft md:-right-6">
-            <p className="font-display text-4xl font-semibold">65+</p>
-            <p className="text-sm">years of excellence</p>
+          <div className="absolute -bottom-6 -right-2 rounded-lg bg-accent px-6 py-4 text-accent-foreground shadow-soft md:-right-6">
+            <p className="font-display text-xl font-semibold">{school.principal}</p>
+            <p className="text-sm">Chief Principal since 2023</p>
           </div>
         </div>
         <div>
@@ -214,8 +210,8 @@ function Index() {
                 <img
                   src={h.image}
                   alt={h.title}
-                  width={1280}
-                  height={896}
+                  width={720}
+                  height={540}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

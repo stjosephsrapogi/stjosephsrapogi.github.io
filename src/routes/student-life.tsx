@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Church, Cross, FlaskConical, Mic2, Moon, Music, Tent, Trophy, Users } from "lucide-react";
 
-import classrooms from "@/assets/campus_classrooms.jpg.asset.json";
-import football from "@/assets/football-match.jpg";
-import lab from "@/assets/science-lab.jpg";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
+import { photos } from "@/lib/photos";
 
 export const Route = createFileRoute("/student-life")({
   head: () => ({
@@ -44,7 +42,7 @@ function StudentLife() {
         eyebrow="Student life"
         title="Beyond the classroom"
         intro="Boarding life at Rapogi builds friendships, teamwork and character that last a lifetime."
-        image={football}
+        image={photos.bus}
       />
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
@@ -68,14 +66,24 @@ function StudentLife() {
             </p>
           </div>
         </div>
-        <img
-          src={football}
-          alt="Students playing football on the school pitch"
-          width={1280}
-          height={896}
-          loading="lazy"
-          className="w-full rounded-lg object-cover shadow-soft"
-        />
+        <div className="grid gap-4">
+          <img
+            src={photos.mofaGroup}
+            alt="Students and Michael Olunga Football Academy officials with new footballs and equipment"
+            width={720}
+            height={480}
+            loading="lazy"
+            className="aspect-[3/2] w-full rounded-lg object-cover shadow-soft"
+          />
+          <img
+            src={photos.mofaSession}
+            alt="MOFA coaches holding a session with St. Joseph's students"
+            width={720}
+            height={480}
+            loading="lazy"
+            className="aspect-[3/2] w-full rounded-lg object-cover shadow-soft"
+          />
+        </div>
       </section>
 
       <section className="bg-secondary/60">
@@ -100,18 +108,18 @@ function StudentLife() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
         <div className="grid grid-cols-2 gap-4">
           <img
-            src={lab}
-            alt="Students in the science laboratory"
-            width={1280}
-            height={896}
+            src={photos.procession}
+            alt="Students in procession on the school field"
+            width={1440}
+            height={960}
             loading="lazy"
             className="aspect-[3/4] w-full rounded-lg object-cover shadow-soft"
           />
           <img
-            src={classrooms.url}
-            alt="Campus buildings"
-            width={720}
-            height={720}
+            src={photos.bus}
+            alt="Students on and around the Rapogi school bus"
+            width={1440}
+            height={1440}
             loading="lazy"
             className="mt-10 aspect-[3/4] w-full rounded-lg object-cover shadow-soft"
           />
