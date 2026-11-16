@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Church, Cross, FlaskConical, Mic2, Music, Tent, Trophy, Users } from "lucide-react";
+import { Church, Cross, FlaskConical, Mic2, Moon, Music, Tent, Trophy, Users } from "lucide-react";
 
 import classrooms from "@/assets/campus_classrooms.jpg.asset.json";
 import football from "@/assets/football-match.jpg";
@@ -135,7 +135,7 @@ function StudentLife() {
               <span className="text-sm">Christian Union and other faith groups</span>
             </li>
             <li className="flex gap-3">
-              <Cross className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <Moon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
               <span className="text-sm">An on-campus mosque for Muslim students</span>
             </li>
           </ul>

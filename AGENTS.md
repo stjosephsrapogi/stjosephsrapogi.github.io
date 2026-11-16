@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- School facts (name, motto, principal, fees, mean score) live in `src/lib/school.ts`; pages read from it so one edit updates the whole site.
+- Shared site chrome (header, footer, page hero, CTA band) lives in `src/components/site/` and wraps routes from `__root.tsx`.
