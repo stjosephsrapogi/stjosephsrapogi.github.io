@@ -230,10 +230,10 @@ function Index() {
         <div className="mx-auto max-w-4xl px-5 py-20 text-center md:py-24">
           <p className="font-display text-6xl leading-none text-gold">“</p>
           <blockquote className="font-display text-2xl leading-snug md:text-3xl">
-            Our task is to sharpen every young man who walks through our gates — in knowledge, in
-            discipline and in faith — so that he is ready for the future.
+            Every young man who walks through our gates is sharpened — in knowledge, in discipline
+            and in faith — so that he leaves ready for the future.
           </blockquote>
-          <p className="eyebrow mt-8 text-gold">{school.principal} · Chief Principal</p>
+          <p className="eyebrow mt-8 text-gold">Our promise to every family</p>
         </div>
       </section>
 
