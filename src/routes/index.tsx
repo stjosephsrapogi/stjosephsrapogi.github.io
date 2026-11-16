@@ -40,11 +40,22 @@ const stats = [
   { value: "C1", label: "National school cluster" },
 ];
 
-const pillarIcons = [ShieldCheck, Award, BookOpen];
-const pillarText = [
-  "Order, respect and self-control shape every day on campus — in class, in the dormitory and on the field.",
-  "We set high targets and track them closely, building a culture where every boy aims for his personal best.",
-  "Honesty and strong moral character, rooted in our Catholic foundation, guide how our students live and lead.",
+const pillars = [
+  {
+    name: "Discipline",
+    icon: ShieldCheck,
+    text: "Order, respect and self-control shape every day on campus — in class, in the dormitory and on the field.",
+  },
+  {
+    name: "Excellence",
+    icon: Award,
+    text: "We set high targets and track them closely, building a culture where every boy aims for his personal best.",
+  },
+  {
+    name: "Integrity",
+    icon: BookOpen,
+    text: "Honesty and strong moral character, rooted in our Catholic foundation, guide how our students live and lead.",
+  },
 ];
 
 const highlights = [
@@ -172,18 +183,15 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <SectionHeading eyebrow="Our core pillars" title="What every Rapogi boy stands for" center />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {school.pillars.map((p, i) => {
-              const Icon = pillarIcons[i];
-              return (
-                <div key={p} className="rounded-lg border border-border bg-card p-7 shadow-soft">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-gold">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-5 text-2xl font-semibold text-primary">{p}</h3>
-                  <p className="mt-3 text-muted-foreground">{pillarText[i]}</p>
-                </div>
-              );
-            })}
+            {pillars.map((p) => (
+              <div key={p.name} className="rounded-lg border border-border bg-card p-7 shadow-soft">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-gold">
+                  <p.icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-5 text-2xl font-semibold text-primary">{p.name}</h3>
+                <p className="mt-3 text-muted-foreground">{p.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
