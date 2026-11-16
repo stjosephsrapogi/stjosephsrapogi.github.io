@@ -1,0 +1,13 @@
+{
+  "name": "St. Joseph's National School, Rapogi",
+  "short_name": "St. Joseph's Rapogi",
+  "description": "Public boys' boarding national school in Migori County, Kenya. Sharpening for the Future.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ee",
+  "theme_color": "#0b4a2b",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

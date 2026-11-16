@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { SiteHeader } from "../components/site/SiteHeader";
+import { schoolJsonLd } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -90,6 +91,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "St. Joseph's National School, Rapogi — a public boys' boarding national school in Migori County, Kenya. Sharpening for the Future.",
       },
       { name: "author", content: "St. Joseph's National School, Rapogi" },
+      { name: "theme-color", content: "#0b4a2b" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:site_name", content: "St. Joseph's National School, Rapogi" },
+      { property: "og:locale", content: "en_KE" },
       { property: "og:title", content: "St. Joseph's National School, Rapogi" },
       {
         property: "og:description",
@@ -103,7 +108,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", href: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -111,6 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(schoolJsonLd()) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
