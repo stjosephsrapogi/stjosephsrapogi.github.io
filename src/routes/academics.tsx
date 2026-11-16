@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Atom, BarChart3, Drama, HeartHandshake, Repeat, Trophy } from "lucide-react";
 
 import { CtaBand } from "@/components/site/CtaBand";
@@ -7,23 +8,17 @@ import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/academics")({
-  head: () => ({
-    meta: [
-      { title: "Academics & CBC Pathways — St. Joseph's Rapogi" },
-      {
-        name: "description",
-        content:
-          "CBC Senior School pathways in STEM and Arts & Sports, a signature bi-cycle exam system and a KCSE mean score of up to 9.1264 at St. Joseph's Rapogi.",
-      },
-      { property: "og:title", content: "Academics at St. Joseph's Rapogi" },
-      {
-        property: "og:description",
-        content: "CBC pathways, bi-cycle exams and a strong KCSE track record.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/academics",
+      title: "Academics & CBC Pathways — St. Joseph's Rapogi",
+      description:
+        "CBC Senior School pathways in STEM and Arts & Sports, a signature bi-cycle exam system and a KCSE mean score of up to 9.1264 at St. Joseph's Rapogi.",
+      ogTitle: "Academics at St. Joseph's Rapogi",
+      ogDescription: "CBC pathways, bi-cycle exams and a strong KCSE track record.",
+      ogImage: "/og/academics.jpg",
+      ogImageAlt: "Students in procession on the school field",
+    }),
   component: Academics,
 });
 

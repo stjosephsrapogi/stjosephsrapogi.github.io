@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
@@ -7,23 +8,17 @@ import { photos } from "@/lib/photos";
 import { school, telHref } from "@/lib/school";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us — St. Joseph's National School, Rapogi" },
-      {
-        name: "description",
-        content:
-          "Call +254 732 441252 or +254 709 841539, email rapogihighschool@gmail.com, or write to P.O. Box 2, Sare-Awendo, 40405. Find St. Joseph's Rapogi in Migori County.",
-      },
-      { property: "og:title", content: "Contact St. Joseph's Rapogi" },
-      {
-        property: "og:description",
-        content: "Phone, email, postal address and directions to St. Joseph's Rapogi.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/contact",
+      title: "Contact Us — St. Joseph's National School, Rapogi",
+      description:
+        "Call +254 732 441252 or +254 709 841539, email rapogihighschool@gmail.com, or write to P.O. Box 2, Sare-Awendo, 40405. Find St. Joseph's Rapogi in Migori County.",
+      ogTitle: "Contact St. Joseph's Rapogi",
+      ogDescription: "Phone, email, postal address and directions to St. Joseph's Rapogi.",
+      ogImage: "/og/contact.jpg",
+      ogImageAlt: "Main gate of St. Joseph's School Rapogi",
+    }),
   component: Contact,
 });
 

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users } from "lucide-react";
 
 import crest from "@/assets/rapogi_crest.png";
@@ -9,23 +10,17 @@ import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "St. Joseph's National School, Rapogi — Sharpening for the Future" },
-      {
-        name: "description",
-        content:
-          "Public boys' boarding national school in Sare, Migori County. Senior School Grades 10–12 under CBC, strong KCSE results and a proud history since 1961.",
-      },
-      { property: "og:title", content: "St. Joseph's National School, Rapogi" },
-      {
-        property: "og:description",
-        content: "Sharpening for the Future — boys' national school in Migori County since 1961.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/",
+      title: "St. Joseph's National School, Rapogi — Sharpening for the Future",
+      description:
+        "Public boys' boarding national school in Sare, Migori County. Senior School Grades 10–12 under CBC, strong KCSE results and a proud history since 1961.",
+      ogTitle: "St. Joseph's National School, Rapogi",
+      ogDescription: "Sharpening for the Future — boys' national school in Migori County since 1961.",
+      ogImage: "/og/home.jpg",
+      ogImageAlt: "Aerial view of the St. Joseph's Rapogi campus",
+    }),
   component: Index,
 });
 

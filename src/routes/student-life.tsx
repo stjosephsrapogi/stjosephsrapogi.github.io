@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Church, Cross, FlaskConical, Mic2, Moon, Music, Tent, Trophy, Users } from "lucide-react";
 
 import { CtaBand } from "@/components/site/CtaBand";
@@ -6,23 +7,17 @@ import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { photos } from "@/lib/photos";
 
 export const Route = createFileRoute("/student-life")({
-  head: () => ({
-    meta: [
-      { title: "Student Life, Sports & Clubs — St. Joseph's Rapogi" },
-      {
-        name: "description",
-        content:
-          "KSSSA football strength, a partnership with the Michael Olunga Football Academy, KSEF science competitors, clubs, societies and an inclusive faith life.",
-      },
-      { property: "og:title", content: "Student Life at St. Joseph's Rapogi" },
-      {
-        property: "og:description",
-        content: "Sports, clubs, science fairs and faith life on our boarding campus.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/student-life",
+      title: "Student Life, Sports & Clubs — St. Joseph's Rapogi",
+      description:
+        "KSSSA football strength, a partnership with the Michael Olunga Football Academy, KSEF science competitors, clubs, societies and an inclusive faith life.",
+      ogTitle: "Student Life at St. Joseph's Rapogi",
+      ogDescription: "Sports, clubs, science fairs and faith life on our boarding campus.",
+      ogImage: "/og/student-life.jpg",
+      ogImageAlt: "Students on the Rapogi school bus",
+    }),
   component: StudentLife,
 });
 

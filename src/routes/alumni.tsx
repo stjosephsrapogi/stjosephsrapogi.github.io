@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { GraduationCap, HandHeart, HeartPulse, Users } from "lucide-react";
 
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
@@ -6,23 +7,17 @@ import { Button } from "@/components/ui/button";
 import { photos } from "@/lib/photos";
 
 export const Route = createFileRoute("/alumni")({
-  head: () => ({
-    meta: [
-      { title: "Alumni & Community — St. Joseph's Rapogi (ROSA)" },
-      {
-        name: "description",
-        content:
-          "The Rapogi Old Students Association (ROSA) and class associations support current students through mentorship, healthcare assistance and philanthropy.",
-      },
-      { property: "og:title", content: "Rapogi Alumni & Community" },
-      {
-        property: "og:description",
-        content: "ROSA and class associations giving back to St. Joseph's Rapogi.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/alumni",
+      title: "Alumni & Community — St. Joseph's Rapogi (ROSA)",
+      description:
+        "The Rapogi Old Students Association (ROSA) and class associations support current students through mentorship, healthcare assistance and philanthropy.",
+      ogTitle: "Rapogi Alumni & Community",
+      ogDescription: "ROSA and class associations giving back to St. Joseph's Rapogi.",
+      ogImage: "/og/alumni.jpg",
+      ogImageAlt: "Aerial view of the St. Joseph's Rapogi campus",
+    }),
   component: Alumni,
 });
 

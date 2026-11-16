@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Banknote, Camera, FileCheck2, FileText, IdCard, Shirt } from "lucide-react";
 
 import { SectionHeading, PageHero } from "@/components/site/PageHero";
@@ -7,23 +8,17 @@ import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/admissions")({
-  head: () => ({
-    meta: [
-      { title: "Admissions & Fees — St. Joseph's National School, Rapogi" },
-      {
-        name: "description",
-        content:
-          "Senior School admission requirements, documents to bring, government-approved fees of about KSh 53,554 per year and uniform guidance for St. Joseph's Rapogi.",
-      },
-      { property: "og:title", content: "Admissions at St. Joseph's Rapogi" },
-      {
-        property: "og:description",
-        content: "Requirements, fees and uniform information for new students.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/admissions",
+      title: "Admissions & Fees — St. Joseph's National School, Rapogi",
+      description:
+        "Senior School admission requirements, documents to bring, government-approved fees of about KSh 53,554 per year and uniform guidance for St. Joseph's Rapogi.",
+      ogTitle: "Admissions at St. Joseph's Rapogi",
+      ogDescription: "Requirements, fees and uniform information for new students.",
+      ogImage: "/og/admissions.jpg",
+      ogImageAlt: "Entrance avenue leading to St. Joseph's Rapogi",
+    }),
   component: Admissions,
 });
 
