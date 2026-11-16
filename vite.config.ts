@@ -9,10 +9,29 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// The GitHub Pages workflow builds with NITRO_PRESET=github_pages. There, pages are written as
+// about.html (not about/index.html) so GitHub serves /about without a trailing-slash redirect.
+const githubPages = process.env.NITRO_PRESET === "github_pages";
+
+// Keep in sync with sitePages in src/lib/seo.ts.
+const pages = [
+  "/",
+  "/about",
+  "/academics",
+  "/student-life",
+  "/admissions",
+  "/alumni",
+  "/gallery",
+  "/contact",
+];
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Pre-build every page as static HTML: needed for GitHub Pages and good for search engines.
+    prerender: { enabled: true, crawlLinks: false, autoSubfolderIndex: !githubPages },
+    pages: pages.map((path) => ({ path })),
   },
 });
