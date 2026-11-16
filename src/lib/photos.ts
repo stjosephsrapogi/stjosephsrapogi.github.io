@@ -6,7 +6,7 @@ import gateDiocese from "@/assets/gate_sign_diocese.webp.asset.json";
 import gateMinistry from "@/assets/gate_sign_ministry.jpg.asset.json";
 import mofaSession from "@/assets/mofa_mentorship_session.jpg.asset.json";
 import mofaGroup from "@/assets/mofa_partnership_group.jpg.asset.json";
-import principal from "@/assets/principal_nyagwa.jpg.asset.json";
+import principal from "@/assets/principal_nyagwa_portrait.jpg.asset.json";
 import bus from "@/assets/school_bus_students.webp.asset.json";
 import celebrating from "@/assets/students_celebrating.webp.asset.json";
 import procession from "@/assets/students_procession.webp.asset.json";

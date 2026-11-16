@@ -125,7 +125,7 @@ function About() {
           <img
             src={photos.principal}
             alt="Chief Principal Mr. Erastus Nyagwa speaking at the St. Joseph's chaplaincy podium"
-            width={805}
+            width={768}
             height={1073}
             loading="lazy"
             className="aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft"
