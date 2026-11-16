@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import crest from "@/assets/rapogi_crest.png.asset.json";
-import { navLinks, school } from "@/lib/school";
+import { navLinks, school, telHref } from "@/lib/school";
 
 export function SiteFooter() {
   return (
@@ -48,15 +48,37 @@ export function SiteFooter() {
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
             {school.location}
           </p>
-          <p className="mt-4 text-sm text-forest-deep-foreground/80">
-            Pillars: {school.pillars.join(" · ")}
+          <p className="mt-3 flex gap-2 text-sm text-forest-deep-foreground/80">
+            <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+            {school.postal}
           </p>
+          <div className="mt-3 flex gap-2 text-sm">
+            <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+            <div className="flex flex-col">
+              {school.phones.map((p) => (
+                <a key={p} href={telHref(p)} className="text-forest-deep-foreground/80 hover:text-gold">
+                  {p}
+                </a>
+              ))}
+            </div>
+          </div>
+          <a
+            href={`mailto:${school.email}`}
+            className="mt-3 block break-all text-sm text-gold hover:underline"
+          >
+            {school.email}
+          </a>
         </div>
       </div>
       <div className="border-t border-forest-deep-foreground/15">
-        <p className="mx-auto max-w-6xl px-5 py-5 text-xs text-forest-deep-foreground/60">
-          © {new Date().getFullYear()} {school.name}. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-forest-deep-foreground/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {school.name}. All rights reserved.
+          </p>
+          <p>
+            Made by <span className="font-semibold text-gold">Beta Corporation</span>
+          </p>
+        </div>
       </div>
     </footer>
   );
