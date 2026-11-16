@@ -10,7 +10,7 @@ export const school = {
   principal: "Mr. Erastus Nyagwa",
   meanScore: "9.1264",
   annualFees: "KSh 53,554",
-  phones: ["+254 732 441252", "+254 709 841539"],
+  phones: ["+254 732 441252", "+254 709 841539"] as [string, ...string[]],
   email: "rapogihighschool@gmail.com",
   postal: "P.O. Box 2, Sare-Awendo, 40405, Kenya",
 };
