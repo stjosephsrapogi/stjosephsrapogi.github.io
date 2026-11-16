@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import crest from "@/assets/rapogi_crest.png.asset.json";
+import crest from "@/assets/rapogi_crest.png";
 import { navLinks, school, telHref } from "@/lib/school";
 
 export function SiteFooter() {
@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src={crest.url}
+              src={crest}
               alt=""
               width={56}
               height={56}

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users } from "lucide-react";
 
-import crest from "@/assets/rapogi_crest.png.asset.json";
+import crest from "@/assets/rapogi_crest.png";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionHeading } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
@@ -93,7 +93,7 @@ function Index() {
         <div className="absolute inset-0 -z-10 bg-hero-overlay" />
         <div className="mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-5 pb-16 pt-32 md:pb-24">
           <img
-            src={crest.url}
+            src={crest}
             alt="School crest"
             width={88}
             height={88}

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Church, FlaskConical, GraduationCap, Home, Landmark } from "lucide-react";
 
-import logo from "@/assets/rapogi_logo_full.jpg.asset.json";
+import logo from "@/assets/rapogi_logo_full.jpg";
 import { photos } from "@/lib/photos";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
@@ -191,7 +191,7 @@ function About() {
             />
             <div className="flex aspect-square items-center justify-center rounded-lg bg-card p-4 shadow-soft">
               <img
-                src={logo.url}
+                src={logo}
                 alt="St. Joseph School Rapogi crest"
                 width={1080}
                 height={1080}
