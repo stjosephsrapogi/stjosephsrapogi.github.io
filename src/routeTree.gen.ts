@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AcademicsRouteImport } from './routes/academics'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
+import { Route as AlumniRouteImport } from './routes/alumni'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as StudentLifeRouteImport } from './routes/student-life'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsRoute = AcademicsRouteImport.update({
+  id: '/academics',
+  path: '/academics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlumniRoute = AlumniRouteImport.update({
+  id: '/alumni',
+  path: '/alumni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentLifeRoute = StudentLifeRouteImport.update({
+  id: '/student-life',
+  path: '/student-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/alumni': typeof AlumniRoute
+  '/contact': typeof ContactRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/alumni': typeof AlumniRoute
+  '/contact': typeof ContactRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/alumni': typeof AlumniRoute
+  '/contact': typeof ContactRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/alumni'
+    | '/contact'
+    | '/student-life'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/alumni'
+    | '/contact'
+    | '/student-life'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/alumni'
+    | '/contact'
+    | '/student-life'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AcademicsRoute: typeof AcademicsRoute
+  AdmissionsRoute: typeof AdmissionsRoute
+  AlumniRoute: typeof AlumniRoute
+  ContactRoute: typeof ContactRoute
+  StudentLifeRoute: typeof StudentLifeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics': {
+      id: '/academics'
+      path: '/academics'
+      fullPath: '/academics'
+      preLoaderRoute: typeof AcademicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alumni': {
+      id: '/alumni'
+      path: '/alumni'
+      fullPath: '/alumni'
+      preLoaderRoute: typeof AlumniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life': {
+      id: '/student-life'
+      path: '/student-life'
+      fullPath: '/student-life'
+      preLoaderRoute: typeof StudentLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AcademicsRoute: AcademicsRoute,
+  AdmissionsRoute: AdmissionsRoute,
+  AlumniRoute: AlumniRoute,
+  ContactRoute: ContactRoute,
+  StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
