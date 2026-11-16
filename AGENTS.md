@@ -33,3 +33,6 @@ use the editor.
 
 - School facts (name, motto, principal, fees, mean score) live in `src/lib/school.ts`; pages read from it so one edit updates the whole site.
 - Shared site chrome (header, footer, page hero, CTA band) lives in `src/components/site/` and wraps routes from `__root.tsx`.
+- Site photos are real files in `src/assets/` (not CDN asset pointers) so the static GitHub Pages build is self-contained.
+- GitHub Pages hosting: `.github/workflows/deploy.yml` builds with `GITHUB_PAGES=true`, which turns on prerendering of every page in `vite.config.ts`; Lovable's own publish stays server-rendered. Keep the page list in `vite.config.ts`, `sitePages` in `src/lib/seo.ts` and `public/sitemap.xml` in sync when adding a page.
+- SEO: each route's head comes from `pageHead()` in `src/lib/seo.ts` (canonical, Open Graph, Twitter, share image in `public/og/`); `SITE_URL` there is the single source of the live domain.

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, Menu, Phone } from "lucide-react";
 import { useState } from "react";
 
-import crest from "@/assets/rapogi_crest.png.asset.json";
+import crest from "@/assets/rapogi_crest.png";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks, school, telHref } from "@/lib/school";
@@ -28,7 +28,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 md:h-20">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={crest.url}
+            src={crest}
             alt="St. Joseph's Rapogi crest"
             width={48}
             height={48}

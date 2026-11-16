@@ -1,29 +1,29 @@
-import aerial from "@/assets/campus_aerial.jpg.asset.json";
-import classrooms from "@/assets/campus_classrooms.jpg.asset.json";
-import debate from "@/assets/debate_champions.webp.asset.json";
-import avenue from "@/assets/entrance_avenue.jpg.asset.json";
-import gateDiocese from "@/assets/gate_sign_diocese.webp.asset.json";
-import gateMinistry from "@/assets/gate_sign_ministry.jpg.asset.json";
-import mofaSession from "@/assets/mofa_mentorship_session.jpg.asset.json";
-import mofaGroup from "@/assets/mofa_partnership_group.jpg.asset.json";
-import principal from "@/assets/principal_nyagwa_portrait.jpg.asset.json";
-import bus from "@/assets/school_bus_students.webp.asset.json";
-import celebrating from "@/assets/students_celebrating.webp.asset.json";
-import procession from "@/assets/students_procession.webp.asset.json";
+import aerial from "@/assets/campus_aerial.jpg";
+import classrooms from "@/assets/campus_classrooms.jpg";
+import debate from "@/assets/debate_champions.webp";
+import avenue from "@/assets/entrance_avenue.jpg";
+import gateDiocese from "@/assets/gate_sign_diocese.webp";
+import gateMinistry from "@/assets/gate_sign_ministry.jpg";
+import mofaSession from "@/assets/mofa_mentorship_session.jpg";
+import mofaGroup from "@/assets/mofa_partnership_group.jpg";
+import principal from "@/assets/principal_nyagwa_portrait.jpg";
+import bus from "@/assets/school_bus_students.webp";
+import celebrating from "@/assets/students_celebrating.webp";
+import procession from "@/assets/students_procession.webp";
 
 export const photos = {
-  aerial: aerial.url,
-  classrooms: classrooms.url,
-  debate: debate.url,
-  avenue: avenue.url,
-  gateDiocese: gateDiocese.url,
-  gateMinistry: gateMinistry.url,
-  mofaSession: mofaSession.url,
-  mofaGroup: mofaGroup.url,
-  principal: principal.url,
-  bus: bus.url,
-  celebrating: celebrating.url,
-  procession: procession.url,
+  aerial: aerial,
+  classrooms: classrooms,
+  debate: debate,
+  avenue: avenue,
+  gateDiocese: gateDiocese,
+  gateMinistry: gateMinistry,
+  mofaSession: mofaSession,
+  mofaGroup: mofaGroup,
+  principal: principal,
+  bus: bus,
+  celebrating: celebrating,
+  procession: procession,
 };
 
 export const gallery = [

@@ -1,30 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Building2, Church, FlaskConical, GraduationCap, Home, Landmark } from "lucide-react";
 
-import logo from "@/assets/rapogi_logo_full.jpg.asset.json";
+import logo from "@/assets/rapogi_logo_full.jpg";
 import { photos } from "@/lib/photos";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — St. Joseph's National School, Rapogi" },
-      {
-        name: "description",
-        content:
-          "Founded in 1961 by Catholic missionaries, St. Joseph's Rapogi is a public boys' national school in Migori County led by Chief Principal Mr. Erastus Nyagwa.",
-      },
-      { property: "og:title", content: "About St. Joseph's National School, Rapogi" },
-      {
-        property: "og:description",
-        content: "Our history, leadership and campus — since 1961.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/about",
+      title: "About Us — St. Joseph's National School, Rapogi",
+      description:
+        "Founded in 1961 by Catholic missionaries, St. Joseph's Rapogi is a public boys' national school in Migori County led by Chief Principal Mr. Erastus Nyagwa.",
+      ogTitle: "About St. Joseph's National School, Rapogi",
+      ogDescription: "Our history, leadership and campus — since 1961.",
+      ogImage: "/og/about.jpg",
+      ogImageAlt: "Tree-lined entrance avenue at St. Joseph's Rapogi",
+    }),
   component: About,
 });
 
@@ -191,7 +186,7 @@ function About() {
             />
             <div className="flex aspect-square items-center justify-center rounded-lg bg-card p-4 shadow-soft">
               <img
-                src={logo.url}
+                src={logo}
                 alt="St. Joseph School Rapogi crest"
                 width={1080}
                 height={1080}

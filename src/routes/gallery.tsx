@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { X } from "lucide-react";
 import { useState } from "react";
 
@@ -6,23 +7,17 @@ import { PageHero } from "@/components/site/PageHero";
 import { gallery, photos } from "@/lib/photos";
 
 export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Photo Gallery — St. Joseph's National School, Rapogi" },
-      {
-        name: "description",
-        content:
-          "Photos of campus life at St. Joseph's Rapogi: our grounds, students, debate champions, MOFA football partnership and school events.",
-      },
-      { property: "og:title", content: "St. Joseph's Rapogi Photo Gallery" },
-      {
-        property: "og:description",
-        content: "Campus, students and events at St. Joseph's Rapogi.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/gallery",
+      title: "Photo Gallery — St. Joseph's National School, Rapogi",
+      description:
+        "Photos of campus life at St. Joseph's Rapogi: our grounds, students, debate champions, MOFA football partnership and school events.",
+      ogTitle: "St. Joseph's Rapogi Photo Gallery",
+      ogDescription: "Campus, students and events at St. Joseph's Rapogi.",
+      ogImage: "/og/gallery.jpg",
+      ogImageAlt: "Students in procession on the school field",
+    }),
   component: Gallery,
 });
 
