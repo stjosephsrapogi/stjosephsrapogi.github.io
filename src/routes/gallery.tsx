@@ -36,7 +36,7 @@ function Gallery() {
         eyebrow="Gallery"
         title="Moments at Rapogi"
         intro="A look at our campus, our students and the events that make St. Joseph's special."
-        image={photos.celebrating}
+        image={photos.procession}
       />
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">

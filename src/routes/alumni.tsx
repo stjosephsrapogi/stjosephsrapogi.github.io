@@ -39,7 +39,7 @@ function Alumni() {
         eyebrow="Alumni & community"
         title="Once a Rapogi boy, always a Rapogi boy"
         intro="Our old students remain a powerful, giving family that lifts every new generation."
-        image={photos.procession}
+        image={photos.aerial}
       />
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">

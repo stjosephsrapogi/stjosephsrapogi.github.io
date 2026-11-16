@@ -42,7 +42,7 @@ function StudentLife() {
         eyebrow="Student life"
         title="Beyond the classroom"
         intro="Boarding life at Rapogi builds friendships, teamwork and character that last a lifetime."
-        image={photos.celebrating}
+        image={photos.bus}
       />
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
