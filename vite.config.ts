@@ -11,7 +11,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // The GitHub Pages workflow (.github/workflows/deploy.yml) builds with GITHUB_PAGES=true. Pages are
 // written as about.html (not about/index.html) so GitHub serves /about without a trailing-slash redirect.
-const githubPages = process.env.GITHUB_PAGES === "true";
+const githubPages = process.env["GITHUB_PAGES"] === "true";
 
 // Keep in sync with sitePages in src/lib/seo.ts.
 const pages = [
