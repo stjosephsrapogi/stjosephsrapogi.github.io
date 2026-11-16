@@ -57,7 +57,3 @@ export function SectionHeading({
     </div>
   );
 }
-
-export function CtaBand() {
-  return null;
-}
