@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Banknote, Camera, FileCheck2, FileText, IdCard, Shirt } from "lucide-react";
 
-import aerial from "@/assets/campus_aerial.jpg.asset.json";
 import { SectionHeading, PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/admissions")({
@@ -49,7 +49,7 @@ function Admissions() {
         eyebrow="Admissions"
         title="Begin your Rapogi journey"
         intro="Everything parents and new students need to prepare for joining Senior School at St. Joseph's."
-        image={aerial.url}
+        image={photos.avenue}
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">

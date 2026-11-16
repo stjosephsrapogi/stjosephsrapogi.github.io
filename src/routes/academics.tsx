@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Atom, BarChart3, Drama, HeartHandshake, Repeat, Trophy } from "lucide-react";
 
-import library from "@/assets/library-study.jpg";
-import lab from "@/assets/science-lab.jpg";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
+import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/academics")({
@@ -88,7 +87,7 @@ function Academics() {
         eyebrow="Academics"
         title="High standards. Clear pathways."
         intro="A Senior School built for the Competency-Based Curriculum — backed by decades of KCSE excellence."
-        image={lab}
+        image={photos.procession}
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
@@ -139,14 +138,19 @@ function Academics() {
       </section>
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
-        <img
-          src={library}
-          alt="Students studying together in the library"
-          width={1280}
-          height={896}
-          loading="lazy"
-          className="w-full rounded-lg object-cover shadow-soft"
-        />
+        <figure>
+          <img
+            src={photos.debate}
+            alt="Three St. Joseph's students holding a debate trophy and wearing medals"
+            width={1080}
+            height={1080}
+            loading="lazy"
+            className="aspect-square w-full rounded-lg object-cover shadow-soft"
+          />
+          <figcaption className="mt-3 text-sm text-muted-foreground">
+            Our debaters with their trophy and medals.
+          </figcaption>
+        </figure>
         <div>
           <SectionHeading eyebrow="How we teach" title="Every student, closely followed" />
           <div className="mt-8 space-y-6">
