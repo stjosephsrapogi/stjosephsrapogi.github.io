@@ -5,7 +5,7 @@ import { SITE_URL, pageHead, sitePages } from "@/lib/seo";
 
 describe("SEO setup", () => {
   it("targets the GitHub Pages address", () => {
-    expect(SITE_URL).toBe("https://stjosephrapogi.github.io");
+    expect(SITE_URL).toBe("https://stjosephsrapogi.github.io");
   });
 
   it("gives each page a canonical link and absolute share image on the live address", () => {
@@ -18,10 +18,10 @@ describe("SEO setup", () => {
       ogImage: "/og/about.jpg",
       ogImageAlt: "a",
     });
-    expect(head.links).toContainEqual({ rel: "canonical", href: "https://stjosephrapogi.github.io/about" });
+    expect(head.links).toContainEqual({ rel: "canonical", href: "https://stjosephsrapogi.github.io/about" });
     expect(head.meta).toContainEqual({
       property: "og:image",
-      content: "https://stjosephrapogi.github.io/og/about.jpg",
+      content: "https://stjosephsrapogi.github.io/og/about.jpg",
     });
   });
 

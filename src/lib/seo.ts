@@ -1,7 +1,7 @@
 import { school } from "./school";
 
 /** Public address of the live website. Change this one line if the site moves to a new domain. */
-export const SITE_URL = "https://stjosephrapogi.github.io";
+export const SITE_URL = "https://stjosephsrapogi.github.io";
 
 export const absoluteUrl = (path: string) => `${SITE_URL}${path === "/" ? "/" : path}`;
 
@@ -28,7 +28,7 @@ export function pageHead(p: PageSeo) {
       { property: "og:description", content: p.ogDescription },
       { property: "og:type", content: "website" },
       { property: "og:url", content: url },
-      { property: "og:site_name", content: school.name },
+      { property: "og:site_name", content: school.searchName },
       { property: "og:locale", content: "en_KE" },
       { property: "og:image", content: image },
       { property: "og:image:width", content: "1200" },
@@ -55,6 +55,19 @@ export const sitePages = [
   "/contact",
 ] as const;
 
+/** Tells Google which name to show for the site in search results (homepage only). */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: school.searchName,
+    alternateName: [school.shortName, school.name, "Rapogi High School"],
+    url: `${SITE_URL}/`,
+    publisher: { "@id": `${SITE_URL}/#school` },
+  };
+}
+
 /** Structured data so Google understands this is a school, with its address and contacts. */
 export function schoolJsonLd() {
   return {
@@ -62,9 +75,9 @@ export function schoolJsonLd() {
     "@type": "HighSchool",
     "@id": `${SITE_URL}/#school`,
     name: school.name,
-    alternateName: ["St. Joseph's Rapogi", "Rapogi High School", "St. Joseph's School Rapogi"],
+    alternateName: [school.searchName, school.shortName, "Rapogi High School", "St. Joseph's School Rapogi"],
     url: `${SITE_URL}/`,
-    logo: `${SITE_URL}/icon-512.png`,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/icon-512.png`, width: 512, height: 512 },
     image: `${SITE_URL}/og/home.jpg`,
     description: `${school.type} in ${school.location}, founded in ${school.founded}. ${school.motto}.`,
     slogan: school.motto,
