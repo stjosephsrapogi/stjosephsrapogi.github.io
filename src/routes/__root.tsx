@@ -94,6 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "St. Joseph's National School, Rapogi" },
       { name: "theme-color", content: "#0b4a2b" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
+      {
+        name: "google-site-verification",
+        content: "SOtJxXNjqhb1UQNu9mJNkciRAdXIlIyhjj2-wUjXPPo",
+      },
       { property: "og:site_name", content: "St. Joseph's National School, Rapogi" },
       { property: "og:locale", content: "en_KE" },
       { property: "og:title", content: "St. Joseph's National School, Rapogi" },
