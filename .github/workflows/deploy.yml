@@ -31,6 +31,15 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Work out the site folder
+        # owner.github.io repos are served at the root; any other repo name is a sub-folder.
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          REPO=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+          if [ "$REPO" = "$OWNER.github.io" ]; then BASE="/"; else BASE="/${{ github.event.repository.name }}/"; fi
+          echo "BASE_PATH=$BASE" >> "$GITHUB_ENV"
+          echo "Site folder: $BASE"
+
       - name: Build static site
         run: bun run build
         env:
