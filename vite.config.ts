@@ -12,6 +12,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // The GitHub Pages workflow (.github/workflows/deploy.yml) builds with GITHUB_PAGES=true. Pages are
 // written as about.html (not about/index.html) so GitHub serves /about without a trailing-slash redirect.
 const githubPages = process.env["GITHUB_PAGES"] === "true";
+// Sub-folder the GitHub site lives in: "/" for owner.github.io, "/repo-name/" for a project page.
+// The workflow works this out from the repository name.
+const basePath = (githubPages && process.env["BASE_PATH"]) || "/";
 
 // Keep in sync with sitePages in src/lib/seo.ts.
 const pages = [
@@ -26,6 +29,7 @@ const pages = [
 ];
 
 export default defineConfig({
+  vite: { base: basePath },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
