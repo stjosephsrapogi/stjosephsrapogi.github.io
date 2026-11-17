@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
-import { SITE_URL, pageHead, sitePages } from "@/lib/seo";
+import { SITE_URL, pageHead, sitePages, websiteJsonLd } from "@/lib/seo";
 
 describe("SEO setup", () => {
   it("targets the GitHub Pages address", () => {
@@ -23,6 +23,11 @@ describe("SEO setup", () => {
       property: "og:image",
       content: "https://stjosephsrapogi.github.io/og/about.jpg",
     });
+  });
+
+  it("asks Google to show \"St Joseph's Rapogi\" as the site name", () => {
+    expect(websiteJsonLd().name).toBe("St Joseph's Rapogi");
+    expect(websiteJsonLd().url).toBe("https://stjosephsrapogi.github.io/");
   });
 
   it("lists every page in the sitemap", () => {
