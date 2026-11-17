@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead } from "@/lib/seo";
+import { pageHead, websiteJsonLd } from "@/lib/seo";
 import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users } from "lucide-react";
 
 import crest from "@/assets/rapogi_crest.png";
@@ -10,17 +10,19 @@ import { photos } from "@/lib/photos";
 import { school } from "@/lib/school";
 
 export const Route = createFileRoute("/")({
-  head: () =>
-    pageHead({
+  head: () => ({
+    ...pageHead({
       path: "/",
-      title: "St. Joseph's National School, Rapogi — Sharpening for the Future",
+      title: "St Joseph's Rapogi — St. Joseph's National School, Migori County",
       description:
         "Public boys' boarding national school in Sare, Migori County. Senior School Grades 10–12 under CBC, strong KCSE results and a proud history since 1961.",
-      ogTitle: "St. Joseph's National School, Rapogi",
+      ogTitle: "St Joseph's Rapogi",
       ogDescription: "Sharpening for the Future — boys' national school in Migori County since 1961.",
       ogImage: "/og/home.jpg",
       ogImageAlt: "Aerial view of the St. Joseph's Rapogi campus",
     }),
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(websiteJsonLd()) }],
+  }),
   component: Index,
 });
 

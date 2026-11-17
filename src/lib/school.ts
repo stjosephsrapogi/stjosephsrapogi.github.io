@@ -1,6 +1,8 @@
 export const school = {
   name: "St. Joseph's National School, Rapogi",
   shortName: "St. Joseph's Rapogi",
+  /** Name shown at the top of Google search results. */
+  searchName: "St Joseph's Rapogi",
   motto: "Sharpening for the Future",
   pillars: ["Discipline", "Excellence", "Integrity"],
   location: "Sare, Uriri Sub-county, Migori County, Kenya",

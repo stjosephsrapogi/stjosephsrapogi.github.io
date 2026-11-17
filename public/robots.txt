@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stjosephrapogi.github.io/sitemap.xml
+Sitemap: https://stjosephsrapogi.github.io/sitemap.xml
