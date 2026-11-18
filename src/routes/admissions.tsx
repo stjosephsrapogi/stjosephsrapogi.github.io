@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
-import { Banknote, Camera, FileCheck2, FileText, IdCard, Shirt } from "lucide-react";
+import { Banknote, Camera, FileCheck2, FileText, IdCard, MessageSquareText, Phone, Shirt } from "lucide-react";
+
+import { AdmissionInquiryForm } from "@/components/site/AdmissionInquiryForm";
 
 import { SectionHeading, PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
@@ -46,6 +48,17 @@ function Admissions() {
         intro="Everything parents and new students need to prepare for joining Senior School at St. Joseph's."
         image={photos.avenue}
       />
+
+      <div className="border-b border-border bg-secondary/60">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-muted-foreground">Have a question about joining St. Joseph's?</p>
+          <Button asChild size="sm">
+            <a href="#inquiry">
+              <MessageSquareText /> Send an admissions inquiry
+            </a>
+          </Button>
+        </div>
+      </div>
 
       <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
         <SectionHeading eyebrow="How to join" title="Admission in five steps" />
@@ -104,6 +117,33 @@ function Admissions() {
           <Button asChild variant="default" className="mt-8">
             <Link to="/contact">Ask about uniform vendors</Link>
           </Button>
+        </div>
+      </section>
+
+      <section id="inquiry" className="scroll-mt-24 bg-secondary/60">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1fr_1.5fr] md:py-24">
+          <div>
+            <SectionHeading
+              eyebrow="Admissions inquiry"
+              title="Ask us about enrolment"
+              intro="Parents and guardians can send a question here. Leave your phone number and the admissions office will get back to you."
+            />
+            <div className="mt-8 rounded-lg border border-border bg-card p-5">
+              <p className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <Phone className="h-4 w-4" /> Prefer to call?
+              </p>
+              <ul className="mt-2 space-y-1 text-sm">
+                {school.phones.map((p) => (
+                  <li key={p}>
+                    <a className="hover:text-primary hover:underline" href={`tel:${p.replace(/\s/g, "")}`}>
+                      {p}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <AdmissionInquiryForm />
         </div>
       </section>
     </>
