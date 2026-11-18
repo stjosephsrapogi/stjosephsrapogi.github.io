@@ -75,9 +75,27 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {school.name}. All rights reserved.
           </p>
-          <p>
-            Made by <span className="font-semibold text-gold">Beta Corporation</span>
-          </p>
+          <div className="text-center sm:text-right">
+            <p>
+              Made by{" "}
+              <a
+                href={school.builderUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-gold hover:underline"
+              >
+                Beta Corporation
+              </a>
+            </p>
+            <a
+              href={school.builderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 block break-all text-forest-deep-foreground/50 hover:text-gold hover:underline"
+            >
+              betacorporation.github.io
+            </a>
+          </div>
         </div>
       </div>
     </footer>

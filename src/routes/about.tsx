@@ -101,6 +101,19 @@ function About() {
         </div>
       </section>
 
+      <section className="bg-forest-deep text-forest-deep-foreground">
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-20 md:grid-cols-2 md:gap-8 md:py-24">
+          <div className="rounded-lg border border-forest-deep-foreground/15 bg-forest-deep-foreground/5 p-8 md:p-10">
+            <p className="eyebrow rule-gold text-gold">Our mission</p>
+            <p className="font-display mt-5 text-2xl leading-snug md:text-3xl">{school.mission}</p>
+          </div>
+          <div className="rounded-lg border border-forest-deep-foreground/15 bg-forest-deep-foreground/5 p-8 md:p-10">
+            <p className="eyebrow rule-gold text-gold">Our vision</p>
+            <p className="font-display mt-5 text-2xl leading-snug md:text-3xl">{school.vision}</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary/60">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <SectionHeading eyebrow="Milestones" title="Our journey" />

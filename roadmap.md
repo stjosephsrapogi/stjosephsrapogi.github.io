@@ -12,3 +12,4 @@
 - [x] Deputy Principal (Administration) photo added to About and Gallery — Mr Duncan Jumba, name confirmed
 - [x] YouTube documentary player wired in (Home + About) — shows nothing until a link is saved
 - [x] Documentary film from YouTube playing on Home and About (1pTxGrx8JBU, published 2024-11-19)
+- [x] School mission and vision added (Home + About) and Beta Corporation website linked in the footer

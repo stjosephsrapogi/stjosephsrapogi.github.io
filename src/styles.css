@@ -177,6 +177,18 @@
   }
 }
 
+@utility rule-gold {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    background: var(--gold);
+  }
+}
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }

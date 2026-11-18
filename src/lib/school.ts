@@ -4,6 +4,9 @@ export const school = {
   /** Name shown at the top of Google search results. */
   searchName: "St Joseph's Rapogi",
   motto: "Sharpening for the Future",
+  /** Official mission and vision statements, as supplied by the school. */
+  mission: "To produce self disciplined students with excellent academic performance.",
+  vision: "To offer quality education.",
   pillars: ["Discipline", "Excellence", "Integrity"],
   location: "Sare, Uriri Sub-county, Migori County, Kenya",
   type: "Public Boys' Boarding National School",
@@ -32,6 +35,8 @@ export const school = {
   phones: ["+254 732 441252", "+254 709 841539"] as [string, ...string[]],
   email: "rapogihighschool@gmail.com",
   postal: "P.O. Box 2, Sare-Awendo, 40405, Kenya",
+  /** Website of the studio that built and maintains this site. */
+  builderUrl: "https://betacorporation.github.io",
 };
 
 export const telHref = (phone: string) => `tel:${phone.replace(/\s/g, "")}`;

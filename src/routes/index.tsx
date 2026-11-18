@@ -172,6 +172,24 @@ function Index() {
         </div>
       </section>
 
+      {/* Mission & vision */}
+      <section className="border-y border-border bg-card">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-2 md:gap-12 md:py-16">
+          <div>
+            <p className="eyebrow text-accent">Our mission</p>
+            <p className="font-display mt-3 text-xl leading-snug text-primary md:text-2xl">
+              {school.mission}
+            </p>
+          </div>
+          <div className="md:border-l md:border-border md:pl-12">
+            <p className="eyebrow text-accent">Our vision</p>
+            <p className="font-display mt-3 text-xl leading-snug text-primary md:text-2xl">
+              {school.vision}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Pillars */}
       <section className="bg-secondary/60">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">

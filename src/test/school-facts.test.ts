@@ -15,6 +15,17 @@ describe("school facts", () => {
   it("uses the official motto", () => {
     expect(school.motto).toBe("Sharpening for the Future");
   });
+  it("shows the mission statement the school supplied", () => {
+    expect(school.mission).toBe(
+      "To produce self disciplined students with excellent academic performance.",
+    );
+  });
+  it("shows the vision statement the school supplied", () => {
+    expect(school.vision).toBe("To offer quality education.");
+  });
+  it("links the footer credit to the Beta Corporation website", () => {
+    expect(school.builderUrl).toBe("https://betacorporation.github.io");
+  });
   it("names the Deputy Principal, Administration as the school confirmed", () => {
     expect(school.deputyPrincipal.role).toBe("Deputy Principal, Administration");
     expect(school.deputyPrincipal.name).toBe("Mr Duncan Jumba");
