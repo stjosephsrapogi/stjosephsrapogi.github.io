@@ -1,4 +1,12 @@
 import aerial from "@/assets/campus_aerial.jpg";
+import boarding from "@/assets/boarding_dormitory.jpg";
+import cultural from "@/assets/cultural_performance.jpg";
+import mofaHandover from "@/assets/mofa_ball_handover.jpg";
+import scoutsLeader from "@/assets/scouts_leader_stage.jpg";
+import dancing from "@/assets/students_dancing_field.jpg";
+import medal from "@/assets/students_medal.jpg";
+import talentCertificates from "@/assets/talent_show_certificates.jpg";
+import talentHost from "@/assets/talent_show_host.jpg";
 import classrooms from "@/assets/campus_classrooms.jpg";
 import debate from "@/assets/debate_champions.webp";
 import deputyPrincipal from "@/assets/deputy_principal_administration.jpg";
@@ -26,6 +34,14 @@ export const photos = {
   bus: bus,
   celebrating: celebrating,
   procession: procession,
+  boarding: boarding,
+  cultural: cultural,
+  mofaHandover: mofaHandover,
+  scoutsLeader: scoutsLeader,
+  dancing: dancing,
+  medal: medal,
+  talentCertificates: talentCertificates,
+  talentHost: talentHost,
 };
 
 export const gallery = [
@@ -34,6 +50,14 @@ export const gallery = [
   { src: photos.debate, caption: "Debate champions with their trophy" },
   { src: photos.mofaGroup, caption: "Equipment handover with the Michael Olunga Football Academy" },
   { src: photos.celebrating, caption: "Celebrating together on the field" },
+  { src: photos.cultural, caption: "A traditional music performance on stage" },
+  { src: photos.talentCertificates, caption: "Talent show participants with their certificates" },
+  { src: photos.dancing, caption: "Students dancing on the field during a school celebration" },
+  { src: photos.mofaHandover, caption: "MOFA officials handing over footballs to the school" },
+  { src: photos.medal, caption: "Students showing off a medal after a competition" },
+  { src: photos.scoutsLeader, caption: "A Kenya Scouts Association leader on stage with students" },
+  { src: photos.talentHost, caption: "Hosting the talent night on stage" },
+  { src: photos.boarding, caption: "An evening in the dormitory" },
   { src: photos.mofaSession, caption: "MOFA mentorship session with students" },
   { src: photos.bus, caption: "The Rapogi school bus" },
   { src: photos.avenue, caption: "The tree-lined entrance avenue" },

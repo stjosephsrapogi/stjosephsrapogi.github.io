@@ -6,7 +6,7 @@
 - [x] Add "Made by Beta Corporation" credit in footer
 - [x] GitHub Pages hosting setup (stjosephsrapogi.github.io) + step-by-step guide
 - [x] Full SEO: per-page titles/descriptions, canonical links, share pictures, sitemap, robots, school details for Google, icons
-- [ ] More photos — waiting on the user
+- [x] 8 more photos added (Gallery + Student Life talent & culture section)
 - [x] Google Search Console verification tag added
 - [x] School crest as the search icon, "St Joseph's Rapogi" as the search name, fix live address to stjosephsrapogi.github.io
 - [x] Deputy Principal (Administration) photo added to About and Gallery — Mr Duncan Jumba, name confirmed
