@@ -40,6 +40,10 @@ describe("school documentary video", () => {
     expect(videoId()).toBe("");
   });
 
+  it("records the day the documentary was published on YouTube", () => {
+    expect(school.video.uploadDate).toBe("2024-11-19");
+  });
+
   it("builds the picture shown before play", () => {
     expect(youtubeThumbnail("dQw4w9WgXcQ")).toBe(
       "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",

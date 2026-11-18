@@ -24,7 +24,7 @@ export const school = {
     description:
       "A documentary film about life at St. Joseph's Rapogi: our history, classrooms, sports and students.",
     /** YYYY-MM-DD from the YouTube upload date — Google needs it to show the film in results. */
-    uploadDate: "",
+    uploadDate: "2024-11-19",
   },
   meanScore: "9.1264",
   annualFees: "KSh 53,554",
