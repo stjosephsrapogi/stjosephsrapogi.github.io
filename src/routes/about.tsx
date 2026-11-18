@@ -148,6 +148,35 @@ function About() {
         </div>
       </section>
 
+      <section className="bg-secondary/60">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1fr_1.2fr] md:py-24">
+          <figure className="md:order-2">
+            <img
+              src={photos.deputyPrincipal}
+              alt="The Deputy Principal, Administration speaking at the school podium"
+              width={878}
+              height={1169}
+              loading="lazy"
+              className="aspect-[4/5] w-full rounded-lg object-cover object-top shadow-soft"
+            />
+            <figcaption className="mt-3 text-sm text-muted-foreground">
+              {school.deputyPrincipal.name || school.deputyPrincipal.role}
+            </figcaption>
+          </figure>
+          <div className="md:order-1">
+            <SectionHeading eyebrow="Leadership" title={school.deputyPrincipal.role} />
+            <p className="mt-6 text-muted-foreground md:text-lg">
+              The Deputy Principal, Administration keeps the school running day to day — student
+              records, timetables, discipline and the smooth coordination of staff and boarding
+              life — so that lessons, exams and school activities move forward on time.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Name to be confirmed by the school.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-card">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
           <div>

@@ -10,6 +10,11 @@ export const school = {
   cluster: "C1",
   founded: 1961,
   principal: "Mr. Erastus Nyagwa",
+  /** Name not yet confirmed by the school — fill in when supplied, never invent one. */
+  deputyPrincipal: {
+    name: "",
+    role: "Deputy Principal, Administration",
+  },
   meanScore: "9.1264",
   annualFees: "KSh 53,554",
   phones: ["+254 732 441252", "+254 709 841539"] as [string, ...string[]],

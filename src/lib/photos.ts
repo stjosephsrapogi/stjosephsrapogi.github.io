@@ -1,6 +1,7 @@
 import aerial from "@/assets/campus_aerial.jpg";
 import classrooms from "@/assets/campus_classrooms.jpg";
 import debate from "@/assets/debate_champions.webp";
+import deputyPrincipal from "@/assets/deputy_principal_administration.jpg";
 import avenue from "@/assets/entrance_avenue.jpg";
 import gateDiocese from "@/assets/gate_sign_diocese.webp";
 import gateMinistry from "@/assets/gate_sign_ministry.jpg";
@@ -15,6 +16,7 @@ export const photos = {
   aerial: aerial,
   classrooms: classrooms,
   debate: debate,
+  deputyPrincipal: deputyPrincipal,
   avenue: avenue,
   gateDiocese: gateDiocese,
   gateMinistry: gateMinistry,
@@ -38,5 +40,6 @@ export const gallery = [
   { src: photos.classrooms, caption: "Classroom blocks among the trees" },
   { src: photos.gateMinistry, caption: "The main gate" },
   { src: photos.gateDiocese, caption: "Diocese of Homa Bay gate sign" },
+  { src: photos.deputyPrincipal, caption: "Deputy Principal, Administration addressing the school" },
   { src: photos.principal, caption: "Chief Principal Mr. Erastus Nyagwa" },
 ];

@@ -9,3 +9,4 @@
 - [ ] More photos — waiting on the user
 - [x] Google Search Console verification tag added
 - [x] School crest as the search icon, "St Joseph's Rapogi" as the search name, fix live address to stjosephsrapogi.github.io
+- [x] Deputy Principal (Administration) photo added to About and Gallery — name still needed from the school

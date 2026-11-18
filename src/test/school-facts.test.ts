@@ -15,4 +15,8 @@ describe("school facts", () => {
   it("uses the official motto", () => {
     expect(school.motto).toBe("Sharpening for the Future");
   });
+  it("names the administration deputy role without inventing a person", () => {
+    expect(school.deputyPrincipal.role).toBe("Deputy Principal, Administration");
+    expect(school.deputyPrincipal.name).toBe("");
+  });
 });
