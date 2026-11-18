@@ -19,10 +19,11 @@ export const school = {
    * video ID) into `youtubeUrl` and the player appears on the site automatically.
    */
   video: {
-    youtubeUrl: "",
-    title: "St. Joseph's National School, Rapogi — documentary",
+    youtubeUrl: "https://youtu.be/1pTxGrx8JBU?si=10IjI24TPX2qSTyA",
+    /** The film's own title on YouTube. */
+    title: "St. Joseph's School, Rapogi — 2024 Documentary",
     description:
-      "A documentary film about life at St. Joseph's Rapogi: our history, classrooms, sports and students.",
+      "The 2024 documentary film about life at St. Joseph's Rapogi: our history, classrooms, sports and students.",
     /** YYYY-MM-DD from the YouTube upload date — Google needs it to show the film in results. */
     uploadDate: "2024-11-19",
   },

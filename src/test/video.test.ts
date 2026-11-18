@@ -35,9 +35,9 @@ describe("school documentary video", () => {
     );
   });
 
-  it("keeps the player off the page until the school supplies a link", () => {
-    expect(school.video.youtubeUrl).toBe("");
-    expect(videoId()).toBe("");
+  it("plays the documentary the school published", () => {
+    expect(videoId()).toBe("1pTxGrx8JBU");
+    expect(school.video.title).toBe("St. Joseph's School, Rapogi — 2024 Documentary");
   });
 
   it("records the day the documentary was published on YouTube", () => {
