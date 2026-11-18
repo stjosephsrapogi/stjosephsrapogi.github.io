@@ -1,4 +1,5 @@
 import { school } from "./school";
+import { videoId, youtubeThumbnail } from "./video";
 
 /** Public address of the live website. Change this one line if the site moves to a new domain. */
 export const SITE_URL = "https://stjosephsrapogi.github.io";
@@ -100,6 +101,41 @@ export function schoolJsonLd() {
       areaServed: "KE",
       availableLanguage: ["English", "Swahili"],
     })),
-    employee: { "@type": "Person", name: school.principal, jobTitle: "Chief Principal" },
+    employee: [
+      { "@type": "Person", name: school.principal, jobTitle: "Chief Principal" },
+      ...(school.deputyPrincipal.name
+        ? [
+            {
+              "@type": "Person",
+              name: school.deputyPrincipal.name,
+              jobTitle: school.deputyPrincipal.role,
+            },
+          ]
+        : []),
+    ],
+  };
+}
+
+/** Turns structured-data objects into script tags, skipping any that are not ready yet. */
+export function jsonLdScripts(...objects: Array<unknown | null | undefined>) {
+  return objects
+    .filter((object): object is NonNullable<typeof object> => Boolean(object))
+    .map((object) => ({ type: "application/ld+json", children: JSON.stringify(object) }));
+}
+
+/** Tells Google about the school documentary film, so it can appear under the site. */
+export function videoJsonLd() {
+  const id = videoId();
+  if (!id) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: school.video.title,
+    description: school.video.description,
+    thumbnailUrl: [youtubeThumbnail(id), youtubeThumbnail(id, "hq")],
+    ...(school.video.uploadDate ? { uploadDate: school.video.uploadDate } : {}),
+    contentUrl: `https://www.youtube.com/watch?v=${id}`,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
+    publisher: { "@id": `${SITE_URL}/#school` },
   };
 }

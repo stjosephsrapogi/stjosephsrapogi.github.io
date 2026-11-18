@@ -9,4 +9,6 @@
 - [ ] More photos — waiting on the user
 - [x] Google Search Console verification tag added
 - [x] School crest as the search icon, "St Joseph's Rapogi" as the search name, fix live address to stjosephsrapogi.github.io
-- [x] Deputy Principal (Administration) photo added to About and Gallery — name still needed from the school
+- [x] Deputy Principal (Administration) photo added to About and Gallery — Mr Duncan Jumba, name confirmed
+- [x] YouTube documentary player wired in (Home + About) — shows nothing until a link is saved
+- [ ] Documentary YouTube link needed from the school — paste into `video.youtubeUrl` in src/lib/school.ts (plus upload date for Google)

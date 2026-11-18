@@ -10,10 +10,21 @@ export const school = {
   cluster: "C1",
   founded: 1961,
   principal: "Mr. Erastus Nyagwa",
-  /** Name not yet confirmed by the school — fill in when supplied, never invent one. */
   deputyPrincipal: {
-    name: "",
+    name: "Mr Duncan Jumba",
     role: "Deputy Principal, Administration",
+  },
+  /**
+   * The school documentary, hosted on YouTube. Paste any YouTube link (or just the
+   * video ID) into `youtubeUrl` and the player appears on the site automatically.
+   */
+  video: {
+    youtubeUrl: "",
+    title: "St. Joseph's National School, Rapogi — documentary",
+    description:
+      "A documentary film about life at St. Joseph's Rapogi: our history, classrooms, sports and students.",
+    /** YYYY-MM-DD from the YouTube upload date — Google needs it to show the film in results. */
+    uploadDate: "",
   },
   meanScore: "9.1264",
   annualFees: "KSh 53,554",

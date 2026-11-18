@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { pageHead, websiteJsonLd } from "@/lib/seo";
+import { jsonLdScripts, pageHead, videoJsonLd, websiteJsonLd } from "@/lib/seo";
 import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users } from "lucide-react";
 
 import crest from "@/assets/rapogi_crest.png";
 import { CtaBand } from "@/components/site/CtaBand";
+import { Documentary } from "@/components/site/Documentary";
 import { SectionHeading } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
 import { photos } from "@/lib/photos";
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/")({
       ogImage: "/og/home.jpg",
       ogImageAlt: "Aerial view of the St. Joseph's Rapogi campus",
     }),
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(websiteJsonLd()) }],
+    scripts: jsonLdScripts(websiteJsonLd(), videoJsonLd()),
   }),
   component: Index,
 });
@@ -225,6 +226,9 @@ function Index() {
           ))}
         </div>
       </section>
+
+      {/* Documentary */}
+      <Documentary poster={photos.aerial} />
 
       {/* Principal quote */}
       <section className="bg-forest-deep text-forest-deep-foreground">

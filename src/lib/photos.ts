@@ -40,6 +40,9 @@ export const gallery = [
   { src: photos.classrooms, caption: "Classroom blocks among the trees" },
   { src: photos.gateMinistry, caption: "The main gate" },
   { src: photos.gateDiocese, caption: "Diocese of Homa Bay gate sign" },
-  { src: photos.deputyPrincipal, caption: "Deputy Principal, Administration addressing the school" },
+  {
+    src: photos.deputyPrincipal,
+    caption: "Mr Duncan Jumba, Deputy Principal, Administration, addressing the school",
+  },
   { src: photos.principal, caption: "Chief Principal Mr. Erastus Nyagwa" },
 ];

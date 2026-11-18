@@ -5,6 +5,7 @@ import { Building2, Church, FlaskConical, GraduationCap, Home, Landmark } from "
 import logo from "@/assets/rapogi_logo_full.jpg";
 import { photos } from "@/lib/photos";
 import { CtaBand } from "@/components/site/CtaBand";
+import { Documentary } from "@/components/site/Documentary";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { school } from "@/lib/school";
 
@@ -164,14 +165,12 @@ function About() {
             </figcaption>
           </figure>
           <div className="md:order-1">
-            <SectionHeading eyebrow="Leadership" title={school.deputyPrincipal.role} />
+            <SectionHeading eyebrow="Leadership" title={school.deputyPrincipal.name} />
+            <p className="mt-3 font-semibold text-primary">{school.deputyPrincipal.role}</p>
             <p className="mt-6 text-muted-foreground md:text-lg">
               The Deputy Principal, Administration keeps the school running day to day — student
               records, timetables, discipline and the smooth coordination of staff and boarding
               life — so that lessons, exams and school activities move forward on time.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Name to be confirmed by the school.
             </p>
           </div>
         </div>
@@ -226,6 +225,8 @@ function About() {
           </div>
         </div>
       </section>
+
+      <Documentary poster={photos.avenue} />
 
       <CtaBand />
     </>
