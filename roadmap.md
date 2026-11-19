@@ -15,3 +15,5 @@
 - [x] School mission and vision added (Home + About) and Beta Corporation website linked in the footer
 - [x] Admissions inquiry form on the Admissions page, saving each inquiry for the school office
 - [x] Email each new inquiry to stjosephsschoolrapogi@gmail.com (FormSubmit relay; inbox must click the activation link)
+- [ ] Admin page to post school updates (text, photos, short videos) — clarifying details with user
+- [ ] Live streaming of school events (e.g. concerts) on the website — clarifying details with user
