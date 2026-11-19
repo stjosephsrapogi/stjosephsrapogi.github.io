@@ -34,6 +34,8 @@ export const school = {
   annualFees: "KSh 53,554",
   phones: ["+254 732 441252", "+254 709 841539"] as [string, ...string[]],
   email: "rapogihighschool@gmail.com",
+  /** Admissions inquiries from the website are emailed here. */
+  inquiryEmail: "stjosephsschoolrapogi@gmail.com",
   postal: "P.O. Box 2, Sare-Awendo, 40405, Kenya",
   /** Website of the studio that built and maintains this site. */
   builderUrl: "https://betacorporation.github.io",

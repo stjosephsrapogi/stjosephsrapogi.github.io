@@ -14,4 +14,4 @@
 - [x] Documentary film from YouTube playing on Home and About (1pTxGrx8JBU, published 2024-11-19)
 - [x] School mission and vision added (Home + About) and Beta Corporation website linked in the footer
 - [x] Admissions inquiry form on the Admissions page, saving each inquiry for the school office
-- [ ] Email each new inquiry to stjosephsschoolrapogi@gmail.com — choosing a delivery method (no school-owned domain; GitHub site is static)
+- [x] Email each new inquiry to stjosephsschoolrapogi@gmail.com (FormSubmit relay; inbox must click the activation link)

@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { gradeOptions, inquirySchema, toInquiryRow, type InquiryInput } from "@/lib/inquiry";
+import { emailInquiry } from "@/lib/inquiry-email";
 import { school } from "@/lib/school";
 
 const empty: InquiryInput = {
@@ -50,9 +51,18 @@ export function AdmissionInquiryForm() {
       setStatus("sent");
       return;
     }
-    const { error } = await supabase.from("admission_inquiries").insert(toInquiryRow(parsed.data));
-    if (error) {
-      console.error("Inquiry not saved", error.message);
+    // Save a copy and email the office at the same time; either one reaching the school is enough.
+    const [saved, emailed] = await Promise.all([
+      supabase
+        .from("admission_inquiries")
+        .insert(toInquiryRow(parsed.data))
+        .then(({ error }) => {
+          if (error) console.error("Inquiry not saved", error.message);
+          return !error;
+        }),
+      emailInquiry(parsed.data),
+    ]);
+    if (!saved && !emailed) {
       setStatus("failed");
       return;
     }
