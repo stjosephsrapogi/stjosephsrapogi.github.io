@@ -8,6 +8,20 @@
       "when": 1794970825645,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795069539829,
+      "tag": "0001_news_posts_live_stream_staff",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795069555308,
+      "tag": "0002_news_media_read_access",
+      "breakpoints": true
     }
   ]
 }
