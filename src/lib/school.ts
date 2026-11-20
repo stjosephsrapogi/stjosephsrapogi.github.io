@@ -49,6 +49,7 @@ export const navLinks = [
   { to: "/student-life", label: "Student Life" },
   { to: "/admissions", label: "Admissions" },
   { to: "/alumni", label: "Alumni" },
+  { to: "/news", label: "News" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ] as const;

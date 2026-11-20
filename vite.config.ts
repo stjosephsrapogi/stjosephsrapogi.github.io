@@ -26,6 +26,10 @@ const pages = [
   "/alumni",
   "/gallery",
   "/contact",
+  "/news",
+  // Staff-only pages: built so the GitHub site can open them, but kept out of the sitemap.
+  "/admin",
+  "/reset-password",
 ];
 
 export default defineConfig({

@@ -12,10 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcademicsRouteImport } from './routes/academics'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AlumniRouteImport } from './routes/alumni'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
 const AcademicsRoute = AcademicsRouteImport.update({
   id: '/academics',
   path: '/academics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdmissionsRoute = AdmissionsRouteImport.update({
@@ -53,6 +61,16 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
   path: '/student-life',
@@ -63,20 +81,26 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/news': typeof NewsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/news': typeof NewsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesById {
@@ -84,10 +108,13 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academics': typeof AcademicsRoute
+  '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/news': typeof NewsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRouteTypes {
@@ -96,30 +123,39 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academics'
+    | '/admin'
     | '/admissions'
     | '/alumni'
     | '/contact'
     | '/gallery'
+    | '/news'
+    | '/reset-password'
     | '/student-life'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/academics'
+    | '/admin'
     | '/admissions'
     | '/alumni'
     | '/contact'
     | '/gallery'
+    | '/news'
+    | '/reset-password'
     | '/student-life'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/academics'
+    | '/admin'
     | '/admissions'
     | '/alumni'
     | '/contact'
     | '/gallery'
+    | '/news'
+    | '/reset-password'
     | '/student-life'
   fileRoutesById: FileRoutesById
 }
@@ -127,10 +163,13 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AcademicsRoute: typeof AcademicsRoute
+  AdminRoute: typeof AdminRoute
   AdmissionsRoute: typeof AdmissionsRoute
   AlumniRoute: typeof AlumniRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  NewsRoute: typeof NewsRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   StudentLifeRoute: typeof StudentLifeRoute
 }
 
@@ -155,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/academics'
       fullPath: '/academics'
       preLoaderRoute: typeof AcademicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admissions': {
@@ -185,6 +231,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/student-life': {
       id: '/student-life'
       path: '/student-life'
@@ -199,10 +259,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcademicsRoute: AcademicsRoute,
+  AdminRoute: AdminRoute,
   AdmissionsRoute: AdmissionsRoute,
   AlumniRoute: AlumniRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  NewsRoute: NewsRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport

@@ -5,6 +5,8 @@ import { ArrowRight, Award, BookOpen, Dumbbell, FlaskConical, ShieldCheck, Users
 import crest from "@/assets/rapogi_crest.png";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Documentary } from "@/components/site/Documentary";
+import { LivePlayer } from "@/components/news/LiveNow";
+import { NewsFeed } from "@/components/news/NewsFeed";
 import { SectionHeading } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
 import { photos } from "@/lib/photos";
@@ -242,6 +244,24 @@ function Index() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Latest news + live */}
+      <section className="bg-secondary/60">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading eyebrow="Happening now" title="Latest from school" />
+            <Button asChild variant="outline">
+              <Link to="/news">
+                All news <ArrowRight />
+              </Link>
+            </Button>
+          </div>
+          <div className="mx-auto mt-10 max-w-2xl space-y-6">
+            <LivePlayer />
+            <NewsFeed limit={3} />
+          </div>
         </div>
       </section>
 

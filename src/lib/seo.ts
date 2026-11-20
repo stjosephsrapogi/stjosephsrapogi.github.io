@@ -54,6 +54,7 @@ export const sitePages = [
   "/alumni",
   "/gallery",
   "/contact",
+  "/news",
 ] as const;
 
 /** Tells Google which name to show for the site in search results (homepage only). */

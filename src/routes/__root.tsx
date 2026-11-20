@@ -14,6 +14,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { SiteHeader } from "../components/site/SiteHeader";
+import { LiveBanner } from "../components/news/LiveNow";
+import { Toaster } from "../components/ui/sonner";
 import { schoolJsonLd } from "../lib/seo";
 import { withBase } from "../lib/base-path";
 
@@ -154,12 +156,14 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="flex min-h-screen flex-col">
+        <LiveBanner />
         <SiteHeader />
         <main className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
       </div>
+      <Toaster richColors position="top-center" />
     </QueryClientProvider>
   );
 }
