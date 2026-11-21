@@ -24,7 +24,10 @@ export function ManagePosts() {
 
   async function remove(post: NewsPost) {
     const { error } = await supabase.from("news_posts").delete().eq("id", post.id);
-    if (error) return toast.error("That post couldn't be deleted.");
+    if (error) {
+      toast.error("That post couldn't be deleted.");
+      return;
+    }
     const files = [...post.imagePaths, ...(post.videoPath ? [post.videoPath] : [])];
     if (files.length) await supabase.storage.from(MEDIA_BUCKET).remove(files);
     toast.success("Post deleted.");

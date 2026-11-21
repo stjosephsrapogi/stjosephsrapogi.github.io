@@ -22,7 +22,10 @@ export function StaffAccess({ myId }: { myId: string }) {
     const { error } = on
       ? await supabase.from("user_roles").insert({ user_id: userId, role: "editor" })
       : await supabase.from("user_roles").delete().eq("user_id", userId).eq("role", "editor");
-    if (error) return toast.error("Couldn't change access. Please try again.");
+    if (error) {
+      toast.error("Couldn't change access. Please try again.");
+      return;
+    }
     toast.success(on ? "Posting access given." : "Posting access removed.");
     await qc.invalidateQueries({ queryKey: accountsKey });
   }

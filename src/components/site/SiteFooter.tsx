@@ -73,7 +73,10 @@ export function SiteFooter() {
       <div className="border-t border-forest-deep-foreground/15">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-forest-deep-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {school.name}. All rights reserved.
+            © {new Date().getFullYear()} {school.name}. All rights reserved.{" "}
+            <Link to="/admin" className="ml-2 underline hover:text-gold">
+              Staff login
+            </Link>
           </p>
           <div className="text-center sm:text-right">
             <p>
