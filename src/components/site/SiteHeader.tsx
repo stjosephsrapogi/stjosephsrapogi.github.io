@@ -42,12 +42,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 xl:flex">
           {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+              className="whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
               activeProps={{ className: "text-primary font-semibold" }}
             >
               {l.label}
@@ -60,7 +60,7 @@ export function SiteHeader() {
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+            <Button variant="ghost" size="icon" className="xl:hidden" aria-label="Open menu">
               <Menu className="!size-6" />
             </Button>
           </SheetTrigger>
